@@ -156,13 +156,14 @@ html {
 
 #### Trình duyệt hỗ trợ
 
-<span class="snippet__support-note">✅ No caveats.</span>
+<span class="snippet__support-note">✅ Không có cảnh báo.</span>
 
 * https://caniuse.com/#feat=css3-boxsizing
 
 <!-- tags: layout -->
 ### Clearfix
 
+Hãy chắc chắn là các phần tử con trong nó không tự xoá các giá trị thuộc tính của chúng.
 Ensures that an element self-clears its children.
 
 ###### Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.
