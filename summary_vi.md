@@ -96,27 +96,26 @@ Ghi chú: `1rem` tương đương `16px`.
 2. `.bouncing-loader` là khối chứa các hình tròn có hiệu ứng nảy lên  và các hình tròn đó có sử dụng các thuộc tính`display: flex`
    và `justify-content: center` để cố định vị trí của chúng vào giữa ( theo chiều dọc ).
 
-3. thành phần `.bouncing-loader > div`, tập trung vào 3 thẻ con `div` nằm trong class cha `.bouncing-loader`  targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.
+3. thành phần `.bouncing-loader > div`, tập trung vào 3 thẻ con `div` nằm trong class cha `.bouncing-loader` để định dạng. Các thẻ `div`s được đặt các giá trị width và height là`1rem`, sử dụng thêm thuộc tính `border-radius: 50%` để chuyển nó từ hình vuông thành hình tròn.
 
-4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin
-   of `0.2rem` so that they do not directly touch each other, giving them some breathing room.
+4. Thuộc tính `margin: 3rem 0.2rem` để quy định mỗi hình tròn cách viền trên, dưới 1 khoảng `3rem` và cách viền trái/phải 1 khoảng `0.2rem` vì thế các hình tròn không bị chạm vào nhau, cách nhau 1 khoảng trống.
 
-5. `animation` is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` are used.
+5. Thuộc tính `animation` mà một thuộc tính được dùng để đại diện cho các thuộc tính khác như: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction`.
 
-6. `nth-child(n)` targets the element which is the nth child of its parent.
+6. Thuộc tính `nth-child(n)` nhắm tới các thành phần là con thứ n của thẻ cha chứa nó.
 
-7. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
+7. Thuộc tính `animation-delay` thường được sử dụng cho các thẻ div thứ 2, thứ 3, để mỗi phần tử không bắt đầu cái hiệu ứng cùng một lúc.
 
-#### Browser support
+#### Hỗ trợ các trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
 * https://caniuse.com/#feat=css-animation
 
 <!-- tags: animation -->
-### Box-sizing reset
+### Đặt lại các kích thước của khối
 
-Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.
+Đặt lại kích thước khối sao cho các thuộc tính `width` và `height` Không bị ảnh hưởng bởi giá trị của thuộc tính `border` hoặc `padding`.
 
 #### CSS
 
@@ -150,12 +149,12 @@ html {
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.
-2. `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.
+1. Sử dụng thuộc tính `box-sizing: border-box` là một cách để các giá trị của `padding` hoặc `border`không làm ảnh hưởng tới các giá trị `width` or `height`.
+2. Sử dụng thuộc tính `box-sizing: inherit` cho 1 phần tử để nó buộc phải tuân theo những quy tắc trong thuộc tính `box-sizing` của thẻ cha.
 
-#### Browser support
+#### Trình duyệt hỗ trợ
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
