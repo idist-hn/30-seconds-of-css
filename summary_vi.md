@@ -163,10 +163,11 @@ html {
 <!-- tags: layout -->
 ### Clearfix
 
-Hãy chắc chắn là các phần tử con trong nó không tự xoá các giá trị thuộc tính của chúng.
-Ensures that an element self-clears its children.
+Hãy chắc chắn là các phần tử con trong nó tự xoá các giá trị thuộc tính của chúng.
 
-###### Note: This is only useful if you are still using float to build layouts. Please consider using a modern approach with flexbox layout or grid layout.
+**Ensures that an element self-clears its children.**
+
+###### Ghi chú: Việc này chỉ có tác dụng khi bạn sử dụng thuộc tính Float trong khi xây dựng bố cục trang web. This is only useful if you are still using float to build layouts. Cân nhắc việc sử dụng các bố cục hiện đại như flexbox hoặc grid.
 
 #### HTML
 
@@ -214,22 +215,23 @@ Ensures that an element self-clears its children.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-1. `.clearfix::after` defines a pseudo-element.
-2. `content: ''` allows the pseudo-element to affect layout.
-3. `clear: both` indicates that the left, right or both sides of the element cannot be adjacent
-   to earlier floated elements within the same block formatting context.
+1. thuộc tính `.clearfix::after` tạo ra 1 phần tử ảo (phần tử giả).
+2. thuộc tính `content: ''` cho phép các phần tử có thể gây ảnh hưởng tới bố cục.
+3. thuộc tính `clear: both` chỉ định về bên trái, bên phải hoặc cả 2 bên của phần tử đó không liền kề nó trong cùng một khối.
 
-#### Browser support
+#### Trình duyệt hỗ trợ
 
-<span class="snippet__support-note">⚠️ For this snippet to work properly you need to ensure that there are no non-floating children in the container and that there are no tall floats before the clearfixed container but in the same formatting context (e.g. floated columns).</span>
+<span class="snippet__support-note">⚠️ Để thuộc tính này có thể làm việc hiệu quả, bạn cần đảm bảo nó không có phần tử con còn thuộc tính float trong khối chứa nó, và không có phần tử nào chứa thuộc tính float trước khi được clearfix nhưng nó phải ở trong cùng 1 bối cảnh định dạng giống nhau.</span>
 
 <!-- tags: layout -->
-### Constant width to height ratio
+### Cố định tỷ lệ chiều rộng với chiều cao
+
+Với mỗi biến chiều rộng của phần tử, nó sẽ đảm bảo chiều cao luôn tương xứng với responsive.
 
 Given an element of variable width, it will ensure its height remains proportionate in a responsive fashion
-(i.e., its width to height ratio remains constant).
+(tức là chiều rộng và chiều cao không đổi).
 
 #### HTML
 
@@ -258,8 +260,8 @@ Given an element of variable width, it will ensure its height remains proportion
 ```
 
 #### Demo
+Thay đổi kích thước cửa sổ để thấy tỷ lệ của phần tử đó vẫn giữ nguyên.
 
-Resize your browser window to see the proportion of the element remain the same.
 
 <div class="snippet-demo">
   <div class="snippet-demo__constant-width-to-height-ratio"></div>
@@ -283,22 +285,20 @@ Resize your browser window to see the proportion of the element remain the same.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-`padding-top` on the `::before` pseudo-element causes the height of the element to equal a percentage of
-its width. `100%` therefore means the element's height will always be `100%` of the width, creating a responsive
-square.
+thuộc tính `padding-top` trong phần tử ảo `::before` luôn giữ nguyên tỷ lệ giữa chiều cao và chiều rộng.Vì thế chiều cao của phần tử sẽ luôn đạt 100% khi chiều rộng phần tử đạt 100%, nó tạo ra 1 hình vuông có thể co dãn.
 
-This method also allows content to be placed inside the element normally.
+Phương pháp này giúp cho nội dung bên trong phần tử có thể thể hiện một cách bình thường.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
 <!-- tags: layout -->
-### Evenly distributed children
+### Phân phối các phần tử con
 
-Evenly distributes child elements within a parent element.
+Phân phối đều các phần tử con trong các phần tử cha.
 
 #### HTML
 
@@ -337,23 +337,23 @@ Evenly distributes child elements within a parent element.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-1. `display: flex` enables flexbox.
-2. `justify-content: space-between` evenly distributes child elements horizontally. The first item is positioned at the left edge, while the last item is positioned at the right edge.
+1. thuộc tính `display: flex` giúp cho phần tử đó có thể sử dụng kĩ thuật flexbox.
+2. thuộc tính `justify-content: space-between` khiến các phần tử con được phân phối đều theo chiều ngang. Phần tử con đầu tiên nằm ở cạnh bên trái, trong khi phần tử con cuối cùng lại ở cạnh bên phải.
 
-Alternatively, use `justify-content: space-around` to distribute the children with space around them, rather than between them.
+Một cách khác là sử dụng thuộc tính `justify-content: space-around` để phân bố các phần tử con trong nó với các khoảng trống xung quanh chúng, thay vì chỉ nằm giữa chúng.
 
-#### Browser support
+#### Trình duyệt hỗ trợ
 
-<span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
+<span class="snippet__support-note">⚠️ Cần các tiền tố để được hỗ trợ đầy đủ</span>
 
 * https://caniuse.com/#feat=flexbox
 
 <!-- tags: layout -->
 ### Flexbox centering
 
-Horizontally and vertically centers a child element within a parent element using `flexbox`.
+Đặt các phần tử con ở giữa phần tử cha theo chiều dọc khi sử dụng thuộc tính `flexbox`.
 
 #### HTML
 
@@ -390,22 +390,22 @@ Horizontally and vertically centers a child element within a parent element usin
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-1. `display: flex` enables flexbox.
-2. `justify-content: center` centers the child horizontally.
-3. `align-items: center` centers the child vertically.
+1. thuộc tính `display: flex` để cho phép sử dụng flexbox.
+2. thuộc tính `justify-content: center` khiến các phần tử con nằm giữa theo chiều ngang.
+3. thuộc tính `align-items: center` khiến các phần tử con nằm giữa theo chiều dọc.
 
-#### Browser support
+#### Trình duyệt hỗ trợ
 
-<span class="snippet__support-note">⚠️ Needs prefixes for full support.</span>
+<span class="snippet__support-note">⚠️ Cần các tiền tố để được hỗ trợ đầy đủ.</span>
 
 * https://caniuse.com/#feat=flexbox
 
 <!-- tags: layout -->
 ### Grid centering
 
-Horizontally and vertically centers a child element within a parent element using `grid`.
+Đặt các phần tử con vào giữa phần tử cha theo chiều dọc và chiều ngang, sử dụng `grid`.
 
 #### HTML
 
@@ -442,22 +442,22 @@ Horizontally and vertically centers a child element within a parent element usin
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-1. `display: grid` enables grid.
-2. `justify-content: center` centers the child horizontally.
-3. `align-items: center` centers the child vertically.
+1. thuộc tính `display: grid` cho phép sử dụng grid.
+2. thuộc tính `justify-content: center` giúp căn giữa các phần tử con theo chiều ngang.
+3. thuộc tính `align-items: center` giúp căn giữa các phần tử con theo chiều dọc.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
 * https://caniuse.com/#feat=css-grid
 
 <!-- tags: layout -->
-### Grid layout
+### Bố cục sử dụng Grid
 
-Basic website layout using `grid`.
+Bố cục cơ bản của website sử dụng `grid`.
 
 #### HTML
 
@@ -549,24 +549,24 @@ Basic website layout using `grid`.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-1. `display: grid` enables grid.
-2. `grid-gap: 10px` defines spacing between the elements.
-3. `grid-template-columns: repeat(3, 1fr)` defines 3 columns of the same size.
-4. `grid-template-areas` defines the names of grid areas.
-5. `grid-area: sidebar` makes the element use the area with the name `sidebar`.
+1. thuộc tính `display: grid` cho phép sử dụng grid.
+2. thuộc tính `grid-gap: 10px` định nghĩa khoảng trống giữa các phần tử.
+3. thuộc tính `grid-template-columns: repeat(3, 1fr)` định nghĩa là 3 côt có cùng 1 kích thước.
+4. thuộc tính `grid-template-areas` định nghĩa tên cho các vùng grid đó.
+5. thuộc tính `grid-area: sidebar` gán tên cho thành phần sử dụng vùng đó là `sidebar`.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
 * https://caniuse.com/#feat=css-grid
 
 <!-- tags: layout -->
-### Truncate text
+### Lược bỏ text
 
-If the text is longer than one line, it will be truncated and end with an ellipsis `…`.
+Nếu đoạn văn bản dài hơn 1 dòng nó sẽ loại bỏ và cho kết thúc bằng dấu `…`.
 
 #### HTML
 
@@ -603,25 +603,24 @@ If the text is longer than one line, it will be truncated and end with an ellips
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-1. `overflow: hidden` prevents the text from overflowing its dimensions
-   (for a block, 100% width and auto height).
-2. `white-space: nowrap` prevents the text from exceeding one line in height.
-3. `text-overflow: ellipsis` makes it so that if the text exceeds its dimensions, it
-   will end with an ellipsis.
-4. `width: 200px;` ensures the element has a dimension, to know when to get ellipsis
+1. thuộc tính `overflow: hidden` ngăn không cho đoạn văn bản vượt ra khỏi kích thước của nó.
+   (đối với một khối , độ rộng là  100% và chiều cao tự động).
+2. thuộc tính `white-space: nowrap` ngăn không cho đoạn văn bản lớn hơn 1 dòng.
+3. thuộc tính `text-overflow: ellipsis` khiến cho đoạn văn bản nếu vượt quá kích thước của nó sẽ kết thúc bằng dấu `...`
+4. thuộc tính `width: 200px;` để đảm bảo phần tử có kích thước, và biết được khi nào cần có dấu `...`.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
-<span class="snippet__support-note">⚠️ Only works for single line elements.</span>
+<span class="snippet__support-note">⚠️ chỉ làm việc trên các phần tử chỉ có một dòng.</span>
 
 * https://caniuse.com/#feat=text-overflow
 
 <!-- tags: layout -->
-### Circle
+### Vòng tròn
 
-Creates a circle shape with pure CSS.
+Tạo hình tròn với CSS thuần
 
 #### HTML
 
@@ -655,23 +654,21 @@ Creates a circle shape with pure CSS.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-`border-radius: 50%` curves the borders of an element to create a circle.
+thuộc tính `border-radius: 50%` làm cong viền của phần tử để tạo ra hình tròn.
+Vì 1 hình tròn sẽ có chiều rộng và chiều cao bằng nhau. nếu khác nhau nó sẽ tạo ra hình elipse.
 
-Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing
-values will create an ellipse.
-
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
 * https://caniuse.com/#feat=border-radius
 
 <!-- tags: visual -->
-### Custom scrollbar
+### Tuỳ chỉnh thanh cuộn
 
-Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.
+Tùy chỉnh mẫu thanh cuộn cho các tài liệu và các phần tử với scrollable overflow, trên nền tảng WebKit.
 
 #### HTML
 
@@ -738,24 +735,24 @@ Customizes the scrollbar style for the document and elements with scrollable ove
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-1. `::-webkit-scrollbar` targets the whole scrollbar element.
-2. `::-webkit-scrollbar-track` targets only the scrollbar track.
-3. `::-webkit-scrollbar-thumb` targets the scrollbar thumb.
+1. thuộc tính `::-webkit-scrollbar` tập trung vào các thành phần của thanh cuộn.
+2. thuộc tính `::-webkit-scrollbar-track` tập trung vào phần track của thanh cuộn.
+3. thuộc tính `::-webkit-scrollbar-thumb` tập trung vào hình dạng thanh cuộn.
 
-There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/)
+Có rất nhiều mẫu khác nhau để bạn có thể áp dụng vào tạo mẫu thanh cuộn. Chi tiết hơn tại [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/)
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
-<span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>
+<span class="snippet__support-note">⚠️ Kiểu thanh cuốn không xuất hiện trên các đường tiêu chuẩn.</span>
 
 * https://caniuse.com/#feat=css-scrollbar
 
 <!-- tags: visual -->
-### Custom text selection
+### Tuỳ chỉnh bộ chọn văn bản
 
-Changes the styling of text selection.
+thay đổi định dạng văn bản được chọn.
 
 #### HTML
 
@@ -793,21 +790,20 @@ Changes the styling of text selection.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-`::selection` defines a pseudo selector on an element to style text within it when selected. Note that if you don't combine any other selector your style will be applied at document root level, to any selectable element.
+thuộc tính `::selection` định nghĩa bộ chọn mẫu trên 1 phần tử để tạo mẫu văn bản bên trong nó khi được chọn. chú ý là với mọi phần tử được chọn, nếu bạn không tuỳ chỉnh 1 mẫu khác thì nó sẽ trở lại định dạng ban đầu.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
-<span class="snippet__support-note">⚠️ Requires prefixes for full support and is not actually
-in any specification.</span>
+<span class="snippet__support-note">⚠️ Yêu cầu tiền tố để hỗ trợ đầy đủ và không thực sự đúng trong bất kỳ hoàn cảnh nào.</span>
 
 * https://caniuse.com/#feat=css-selection
 
 <!-- tags: visual -->
-### Dynamic shadow
+### Đổ bóng động
 
-Creates a shadow similar to `box-shadow` but based on the colors of the element itself.
+Tạo một bóng tương tự như thuộc tính `box-shadow` nhưng dựa trên màu của chính phần tử đó.
 
 #### HTML
 
@@ -875,16 +871,16 @@ Creates a shadow similar to `box-shadow` but based on the colors of the element 
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-The snippet requires a somewhat complex case of stacking contexts to get right, such that the pseudo-element
-will be positioned underneath the element itself while still being visible.
+Phần này yêu cầu 1 tập định nghĩa các thuộc tính phức tạp để thể hiện đúng, tương tự như một phần tử ảo sẽ được đặt giứa chính nó trong khi nó vẫn hiện ra.
 
-1. `position: relative` on the parent establishes a Cartesian positioning context for child elements.
-2. `z-index: 1` establishes a new stacking context.
-3. `position: relative` on the child establishes a positioning context for pseudo-elements.
-4. `::after` defines a pseudo-element.
-5. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
+
+1. thuộc tính `position: relative` ở phần tử cha thiết lập được định nghĩa về  vị trí Cartersian cho các phần tử con.
+2. thuộc tính `z-index: 1` thiết lập một lớp bối cảnh xếp chồng lên nhau mới.
+3. thuộc tính `position: relative` trong các phần tử con thiết lập ngữ cảnh về vị trí cho phần tử ảo ấy.
+4. `::after` định nghĩa một phần tử giả.
+5. thuộc tính `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
 6. `width: 100%` and `height: 100%` sizes the pseudo-element to fill its parent's dimensions, making it equal in size.
 7. `background: inherit` causes the pseudo-element to inherit the linear gradient specified on the element.
 8. `top: 0.5rem` offsets the pseudo-element down slightly from its parent.
@@ -892,7 +888,7 @@ will be positioned underneath the element itself while still being visible.
 10. `opacity: 0.7` makes the pseudo-element partially transparent.
 11. `z-index: -1` positions the pseudo-element behind the parent.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
@@ -935,7 +931,7 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 `text-shadow: 0 2px white` creates a white shadow offset `0px` horizontally and `2px` vertically
 from the origin position.
@@ -945,7 +941,7 @@ The background must be darker than the shadow for the effect to work.
 The text color should be slightly faded to make it look like it's engraved/carved out
 of the background.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -991,14 +987,14 @@ Gives text a gradient color.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `background: -webkit-linear-gradient(...)` gives the text element a gradient background.
 2. `webkit-text-fill-color: transparent` fills the text with a transparent color.
 3. `webkit-background-clip: text` clips the background with the text, filling the text with
    the gradient background as the color.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">⚠️ Uses non-standard properties.</span>
 
@@ -1072,13 +1068,13 @@ very sharp and crisp.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\*.
 2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI),
    setting the spread of the `box-shadow` equal to `1 / dppx`.
 
-#### Browser Support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">⚠️ Needs alternate syntax and JavaScript user agent checking for full support.</span>
 
@@ -1171,7 +1167,7 @@ Adds a fading gradient to an overflowing element to better indicate there is mor
 document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').innerHTML = 'content '.repeat(100)
 </script>
 
-#### Explanation
+#### Giải thích
 
 1. `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.
 2. `::after` defines a pseudo element.
@@ -1184,7 +1180,7 @@ document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').inne
 7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
 8. `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -1257,7 +1253,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `text-shadow: ...` has 4 values with offsets that cover a 4x4 px area to ensure the underline
    has a "thick" shadow that covers the line where descenders clip it. Use a color
@@ -1268,7 +1264,7 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 4. The `::selection` pseudo selector ensures the text shadow does not interfere with text
    selection.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">⚠️ The distance of the underline from the text depends on the internal metrics of a font, so you must ensure everyone sees the same font (i.e. no system fonts which will change based on the OS).</span>
 
@@ -1312,11 +1308,11 @@ Resets all styles to default values with one property. This will not affect `dir
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 The `all` property allows you to reset all styles (inherited or not) to default values.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">⚠️ MS Edge status is under consideration.</span>
 
@@ -1373,7 +1369,7 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.
 2. `::after` defines a pseudo element.
@@ -1385,7 +1381,7 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 6. `height: 24px` is the same height as the shape.
 7. `bottom: 0` positions the pseudo element at the bottom of the parent.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -1423,7 +1419,7 @@ Uses the native font of the operating system to get close to a native app feel.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 The browser looks for each successive font, preferring the first one if possible, and
 falls back to the next if it cannot find the font (on the system or defined in CSS).
@@ -1438,7 +1434,7 @@ falls back to the next if it cannot find the font (on the system or defined in C
 8. `Arial` is a font widely supported by all operating systems
 9. `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -1521,9 +1517,9 @@ Creates a triangle shape with pure CSS.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
-[View this link for a detailed explanation.](https://stackoverflow.com/q/7073484)
+[View this link for a detailed Giải thích.](https://stackoverflow.com/q/7073484)
 
 The color of the border is the color of the triangle. The side the triangle tip points
 corresponds to the opposite `border-*` property. For example, a color on `border-top`
@@ -1531,7 +1527,7 @@ means the arrow points downward.
 
 Experiment with the `px` values to change the proportion of the triangle.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -1624,7 +1620,7 @@ Creates a bouncing loader animation.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 Note: `1rem` is usually `16px`.
 
@@ -1644,7 +1640,7 @@ Note: `1rem` is usually `16px`.
 
 7. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -1705,12 +1701,12 @@ Creates a donut spinner that can be used to indicate the loading of content.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 Use a semi-transparent `border` for the whole element, except one side that will
 serve as the loading indicator for the donut. Use `animation` to rotate the element.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 
@@ -1815,11 +1811,11 @@ powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. In HTML, `:root` represents the `<html>` element and is identical to the selector `html`, except that its specificity is higher.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -1894,7 +1890,7 @@ Creates an animated underline effect when the text is hovered over.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from
    spanning the entire parent width rather than just the content (text).
@@ -1911,7 +1907,7 @@ Creates an animated underline effect when the text is hovered over.
     to `bottom left` so that the anchor point is reversed, allowing it transition out in the other direction when
     hovered off.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -1951,11 +1947,11 @@ Makes the content unselectable.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 `user-select: none` specifies that the text cannot be selected.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
 <span class="snippet__support-note">⚠️ This is not a secure method to prevent users from copying content.</span>
@@ -2081,7 +2077,7 @@ btn.onmousemove = function(e) {
 })()
 </script>
 
-#### Explanation
+#### Giải thích
 
 _TODO_
 
@@ -2095,7 +2091,7 @@ var x = e.pageX - btn.offsetLeft - btn.offsetParent.offsetLeft
 var y = e.pageY - btn.offsetTop - btn.offsetParent.offsetTop
 ```
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <div class="snippet__requires-javascript">Requires JavaScript</div>
 <span class="snippet__support-note">⚠️ Requires JavaScript.</span>
@@ -2167,7 +2163,7 @@ Reveals an interactive popout menu on hover.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `position: relative` on the reference parent establishes a Cartesian positioning context for its child.
 2. `position: absolute` takes the popout menu out of the flow of the document and positions it
@@ -2177,7 +2173,7 @@ Reveals an interactive popout menu on hover.
 5. `.reference:hover > .popout-menu` means that when `.reference` is hovered over, select immediate
    children with a class of `.popout-menu` and change their `visibility` to `visible`, which shows the popout.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -2242,13 +2238,13 @@ span {
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 1. `transition: opacity 0.2s` specifies that changes to opacity will be transitioned over 0.2 seconds.
 2. `.sibling-fade:hover span:not(:hover)` specifies that when the parent is hovered, select any `span` children
    that are not currently being hovered and change their opacity to `0.5`.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
@@ -2308,7 +2304,7 @@ CSS variables that contain specific values to be reused throughout a document.
 }
 </style>
 
-#### Explanation
+#### Giải thích
 
 The variables are defined globally within the `:root` CSS pseudo-class which matches the root element of a tree representing the document. Variables can also be scoped to a selector if defined within the block.
 
@@ -2316,7 +2312,7 @@ Declare a variable with `--variable-name:`.
 
 Reuse variables throughout the document using the `var(--variable-name)` function.
 
-#### Browser support
+#### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
 
