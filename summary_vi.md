@@ -880,13 +880,13 @@ Phần này yêu cầu 1 tập định nghĩa các thuộc tính phức tạp đ
 2. thuộc tính `z-index: 1` thiết lập một lớp bối cảnh xếp chồng lên nhau mới.
 3. thuộc tính `position: relative` trong các phần tử con thiết lập ngữ cảnh về vị trí cho phần tử ảo ấy.
 4. `::after` định nghĩa một phần tử giả.
-5. thuộc tính `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-6. `width: 100%` and `height: 100%` sizes the pseudo-element to fill its parent's dimensions, making it equal in size.
-7. `background: inherit` causes the pseudo-element to inherit the linear gradient specified on the element.
-8. `top: 0.5rem` offsets the pseudo-element down slightly from its parent.
-9. `filter: blur(0.4rem)` will blur the pseudo-element to create the appearance of a shadow underneath.
-10. `opacity: 0.7` makes the pseudo-element partially transparent.
-11. `z-index: -1` positions the pseudo-element behind the parent.
+5. thuộc tính `position: absolute` tách phần tử con ra khỏi sự phụ thuộc vào phần tử cha và thiết lập mối quan hệ về vị trí đối với phần tử cha.
+6. thuộc tính `width: 100%` và `height: 100%` thiết lập kích thước của phần tử ảo bằng kích thước của phần tử cha.
+7.thuộc tính `background: inherit` giúp cho phần tử đó kế thừa được các thuộc tính của phần tử được xác định trước đó.
+8. thuộc tính  `top: 0.5rem` tạo khoảng cách của phần tử đó với phần tử cha chứa nó.
+9. thuộc tính `filter: blur(0.4rem)` sẽ làm mờ phần tử giả đó , tạo ra một vùng bóng ở phía dưới đó.
+10.thuộc tính  `opacity: 0.7` khiến cho phần tử đó trong suốt.
+11.thuộc tính `z-index: -1` đặt vị trí của phần tử giả ra phía sau cảu phần tử cha của nó..
 
 #### Hỗ trợ trình duyệt
 
@@ -897,7 +897,8 @@ Phần này yêu cầu 1 tập định nghĩa các thuộc tính phức tạp đ
 <!-- tags: visual -->
 ### Etched text
 
-Creates an effect where text appears to be "etched" or engraved into the background.
+Tạo hiệu ứng khắc lên nền ở vùng có chữ.
+
 
 #### HTML
 
@@ -933,13 +934,10 @@ Creates an effect where text appears to be "etched" or engraved into the backgro
 
 #### Giải thích
 
-`text-shadow: 0 2px white` creates a white shadow offset `0px` horizontally and `2px` vertically
-from the origin position.
+thuộc tính `text-shadow: 0 2px white` tạo ra 1 bóng trắng cách theo chiều ngang `0px` và `2px` theo chiều dọc tính từ vị trí ban đầu.
 
-The background must be darker than the shadow for the effect to work.
-
-The text color should be slightly faded to make it look like it's engraved/carved out
-of the background.
+Màu nền phải tối hơn màu bóng để hiệu ứng có thể hiện rõ
+Màu văn bản phải hơi hạt hơn để tạo hiệu ứng giống như là khắc vào nền.
 
 #### Hỗ trợ trình duyệt
 
@@ -950,7 +948,8 @@ of the background.
 <!-- tags: visual -->
 ### Gradient text
 
-Gives text a gradient color.
+tạo ra 1 vùng màu thay đổi.
+
 
 #### HTML
 
@@ -989,9 +988,9 @@ Gives text a gradient color.
 
 #### Giải thích
 
-1. `background: -webkit-linear-gradient(...)` gives the text element a gradient background.
-2. `webkit-text-fill-color: transparent` fills the text with a transparent color.
-3. `webkit-background-clip: text` clips the background with the text, filling the text with
+1. thuộc tính `background: -webkit-linear-gradient(...)` tạo cho văn bản 1 màu nền là 1 dải màu.
+2. thuộc tính `webkit-text-fill-color: transparent` làm cho đoạn văn bản có màu trong suốt
+3. thuộc tính `webkit-background-clip: text` clips the background with the text, filling the text with
    the gradient background as the color.
 
 #### Hỗ trợ trình duyệt
@@ -1001,10 +1000,9 @@ Gives text a gradient color.
 * https://caniuse.com/#feat=text-stroke
 
 <!-- tags: visual -->
-### Hairline border
+### Tạo viền dạng lượn sóng
 
-Gives an element a border equal to 1 native device pixel in width, which can look
-very sharp and crisp.
+tạo cho phần tử 1 đường viền rộng 1px, là sắc nét.
 
 #### HTML
 
@@ -1070,9 +1068,9 @@ very sharp and crisp.
 
 #### Giải thích
 
-1. `box-shadow`, when only using spread, adds a pseudo-border which can use subpixels\*.
-2. Use `@media (min-resolution: ...)` to check the device pixel ratio (`1dppx` equals 96 DPI),
-   setting the spread of the `box-shadow` equal to `1 / dppx`.
+1. thuộc tính `box-shadow`  thêm vào phần tử đó 1 điểm ảnh phụ có thể lan rộng khi sử dụng*.
+2. Sử dụng `@media (min-resolution: ...)` đẻ kiểm tra mật độ điểm ảnh của thiết bị (`1dppx` equals 96 DPI),
+   sao đó cài đặt độ rộng `box-shadow` bằng `1 / dppx`.
 
 #### Hỗ trợ trình duyệt
 
@@ -1087,8 +1085,7 @@ very sharp and crisp.
 
 <!-- tags: visual -->
 ### Overflow scroll gradient
-
-Adds a fading gradient to an overflowing element to better indicate there is more content to be scrolled.
+thêm 1 thanh cuộn để hiển thị tốt hơn phần nội dung cuộn được.
 
 #### HTML
 
@@ -1169,16 +1166,15 @@ document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').inne
 
 #### Giải thích
 
-1. `position: relative` on the parent establishes a Cartesian positioning context for pseudo-elements.
-2. `::after` defines a pseudo element.
-3. `background-image: linear-gradient(...)` adds a linear gradient that fades from transparent to white
-   (top to bottom).
-4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 240px` matches the size of the scrolling element (which is a child of the parent that has
+1.thuộc tính `position: relative` để tạo khung tại phần tử này, giúp các phần tử giả có thể định vị được.
+2. `::after` để định nghĩa phần tử giả đó.
+3. thuộc tính `background-image: linear-gradient(...)` thêm 1 dải màu mờ dần từ trong suốt sang trắng.( trên xuống dưới)
+4. thuộc tính  `position: absolute` tách phần tử con ra khỏi sự phụ thuộc vào phần tử cha và thiết lập mối quan hệ về vị trí đối với phần tử cha.
+5. thuộc tính `width: 240px` giúp cho phần tử có hiệu ứng cuộn có phù hợp với kích thước đó.(which is a child of the parent that has
    the pseudo element).
-6. `height: 25px` is the height of the fading gradient pseudo-element, which should be kept relatively small.
-7. `bottom: 0` positions the pseudo-element at the bottom of the parent.
-8. `pointer-events: none` specifies that the pseudo-element cannot be a target of mouse events, allowing text behind it to still be selectable/interactive.
+6. thuộc tính `height: 25px` là chiều cao của phần tử giả ấy, nên để nó nhỏ.
+7. thuộc tính `bottom: 0` đặt vị trí của phần tử giả tại phía dưới cùng của phần tử cha nó.
+8. thuộc tính `pointer-events: none` là thuộc tính đặc biệt cho phép phần tử ảo không tương tác với các sự kiện của chuột, cho phép văn bản sau nó có thể được lựa chọn, tương tác.
 
 #### Hỗ trợ trình duyệt
 
@@ -1189,8 +1185,8 @@ document.querySelector('.snippet-demo__overflow-scroll-gradient__scroller').inne
 <!-- tags: visual -->
 ### Pretty text underline
 
-A nicer alternative to `text-decoration: underline` where descenders do not clip the underline.
-Natively implemented as `text-decoration-skip-ink: auto` but it has less control over the underline.
+Một thuộc tính tốt hơn thay thế cho `text-decoration: underline` khi cần gạch chân.
+Nó thực hiện 1 cách tự nhiên như `text-decoration-skip-ink: auto` nhưng nó được kiểm soát tốt hơn gạch chân.
 
 #### HTML
 
@@ -1255,26 +1251,23 @@ Natively implemented as `text-decoration-skip-ink: auto` but it has less control
 
 #### Giải thích
 
-1. `text-shadow: ...` has 4 values with offsets that cover a 4x4 px area to ensure the underline
-   has a "thick" shadow that covers the line where descenders clip it. Use a color
-   that matches the background. For a larger font, use a larger `px` size.
-2. `background-image: linear-gradient(...)` creates a 90deg gradient with the current
-   text color (`currentColor`).
-3. The `background-*` properties size the gradient as 1x1px at the bottom and repeats it along the x-axis.
-4. The `::selection` pseudo selector ensures the text shadow does not interfere with text
-   selection.
+1. thuộc tính `text-shadow: ...` có 4 giá trị với độ phủ vùng là 4x4pixel để đảm bảo việc gạch dưới có 1 cái bóng đủ rộng để che phủ đường gạch  dưới đó. Sử dụng màu sắc trùng với màu nền. với các font chữ lớn, sử dụng số px lớn.
+2. thuộc tính `background-image: linear-gradient(...)` tạo 1 gradient 1 góc 90deg với màu chữ hiện tại.
+3. The `background-*` các thuộc tính có kích thước gradient như 1x1px ở phía dưới và lặp lại nó dọc theo trục x
+4. The `::selection` đảm bảo bóng của văn bản không ảnh hưởng tới văn bản được chọn.
 
 #### Hỗ trợ trình duyệt
 
-<span class="snippet__support-note">⚠️ The distance of the underline from the text depends on the internal metrics of a font, so you must ensure everyone sees the same font (i.e. no system fonts which will change based on the OS).</span>
+<span class="snippet__support-note">⚠️Khoảng cách gạch chân từ văn bản phụ thuộc vào số liệu nội bộ của phông chữ, do đó bạn phải đảm bảo mọi người đều thấy cùng một phông chữ (tức là không có phông chữ hệ thống thay đổi dựa trên hệ điều hành)
+.</span>
 
 * https://caniuse.com/#feat=css-textshadow
 * https://caniuse.com/#feat=css-gradients
 
 <!-- tags: visual -->
-### Reset all styles
+### Đặt lại các định dạng
 
-Resets all styles to default values with one property. This will not affect `direction` and `unicode-bidi` properties.
+đặt lại tất cả các định dạng với 1 thuộc tính. nó không ảnh hưởng các tính chất như `direction` và `unicode-bidi`.
 
 #### HTML
 
@@ -1310,7 +1303,7 @@ Resets all styles to default values with one property. This will not affect `dir
 
 #### Giải thích
 
-The `all` property allows you to reset all styles (inherited or not) to default values.
+The `all` cho phép bạn đặt lại các giá trị mặc định.
 
 #### Hỗ trợ trình duyệt
 
@@ -1321,7 +1314,8 @@ The `all` property allows you to reset all styles (inherited or not) to default 
 <!-- tags: visual -->
 ### Shape separator
 
-Uses an SVG shape to separate two different blocks to create more a interesting visual appearance compared to standard horizontal separation.
+Sử dụng một hình dạng SVG để tách hai khối khác nhau để tạo ra một hình ảnh thú vị hơn phân chia ngang theo tiêu chuẩn.
+
 
 #### HTML
 
@@ -1371,15 +1365,16 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 #### Giải thích
 
-1. `position: relative` on the element establishes a Cartesian positioning context for pseudo elements.
-2. `::after` defines a pseudo element.
+1. thuộc tính `position: relative` để tạo khung tại phần tử này, giúp các phần tử giả có thể định vị được.
+2.  `::after` để định nghĩa phần tử giả đó.
 3. `background-image: url(...)` adds the SVG shape (a 24x24 triangle in base64 format) as the background image
    of the pseudo element, which repeats by default. It must be the same color as the block that is being
    separated.
-4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 100%` ensures the element stretches the entire width of its parent.
-6. `height: 24px` is the same height as the shape.
-7. `bottom: 0` positions the pseudo element at the bottom of the parent.
+4. thuộc tính  `position: absolute` tách phần tử con ra khỏi sự phụ thuộc vào phần tử cha và thiết lập mối quan hệ về vị trí đối với phần tử cha.
+5. `width: 100%`  đảm bảo phần tử trải dài toàn bộ chiều rộng của thẻ cha.
+
+6. thuộc tính `height: 24px` để đặt chiều cao phần tử thành 1 khối 
+7. thuộc tính `bottom: 0` đặt vị trí của phần tử giả tại phía dưới cùng của phần tử cha nó.
 
 #### Hỗ trợ trình duyệt
 
@@ -1389,8 +1384,7 @@ Uses an SVG shape to separate two different blocks to create more a interesting 
 
 <!-- tags: visual -->
 ### System font stack
-
-Uses the native font of the operating system to get close to a native app feel.
+Sử dụng font chữ sẵn có trong máy để có thể hiển thị đúng.
 
 #### HTML
 
@@ -1421,18 +1415,17 @@ Uses the native font of the operating system to get close to a native app feel.
 
 #### Giải thích
 
-The browser looks for each successive font, preferring the first one if possible, and
-falls back to the next if it cannot find the font (on the system or defined in CSS).
+Trình duyệt tìm kiếm các phông chữ liên tiếp, chọn font đầu tiên nếu có thể, và chọn font kế tiếp nếu nó không thể tìm thấy phông chữ (trên hệ thống hoặc được định nghĩa trong CSS).
 
-1. `-apple-system` is San Francisco, used on iOS and macOS (not Chrome however)
-2. `BlinkMacSystemFont` is San Francisco, used on macOS Chrome
+1. thuộc tính `-apple-system` là San Francisco, sử dụng cho iOS và macOS (not Chrome however)
+2. thuộc tính `BlinkMacSystemFont` là San Francisco, sử dụng cho macOS Chrome
 3. `Segoe UI` is used on Windows 10
 4. `Roboto` is used on Android
 5. `Oxygen-Sans` is used on GNU+Linux
 6. `Ubuntu` is used on Linux
 7. `"Helvetica Neue"` and `Helvetica` is used on macOS 10.10 and below (wrapped in quotes because it has a space)
-8. `Arial` is a font widely supported by all operating systems
-9. `sans-serif` is the fallback sans-serif font if none of the other fonts are supported
+8. `Arial` là font được hỗ trợ trên mọi hệ điều hành
+9. `sans-serif` là font được dùng khi không có font nào được hỗ trợ.
 
 #### Hỗ trợ trình duyệt
 
@@ -1519,14 +1512,13 @@ Creates a triangle shape with pure CSS.
 
 #### Giải thích
 
-[View this link for a detailed Giải thích.](https://stackoverflow.com/q/7073484)
+[View this link for a detailed complain.](https://stackoverflow.com/q/7073484)
 
 The color of the border is the color of the triangle. The side the triangle tip points
 corresponds to the opposite `border-*` property. For example, a color on `border-top`
 means the arrow points downward.
 
 Experiment with the `px` values to change the proportion of the triangle.
-
 #### Hỗ trợ trình duyệt
 
 <span class="snippet__support-note">✅ No caveats.</span>
@@ -1894,10 +1886,10 @@ Creates an animated underline effect when the text is hovered over.
 
 1. `display: inline-block` makes the block `p` an `inline-block` to prevent the underline from
    spanning the entire parent width rather than just the content (text).
-2. `position: relative` on the element establishes a Cartesian positioning context for pseudo-elements.
-3. `::after` defines a pseudo-element.
-4. `position: absolute` takes the pseudo element out of the flow of the document and positions it in relation to the parent.
-5. `width: 100%` ensures the pseudo-element spans the entire width of the text block.
+2. thuộc tính `position: relative` để tạo khung tại phần tử này, giúp các phần tử giả có thể định vị được.
+3.  `::after` để định nghĩa phần tử giả đó.
+4. thuộc tính  `position: absolute` tách phần tử con ra khỏi sự phụ thuộc vào phần tử cha và thiết lập mối quan hệ về vị trí đối với phần tử cha.
+5.  `width: 100%`  đảm bảo phần tử trải dài toàn bộ chiều rộng của thẻ cha.
 6. `transform: scaleX(0)` initially scales the pseudo element to 0 so it has no width and is not visible.
 7. `bottom: 0` and `left: 0` position it to the bottom left of the block.
 8. `transition: transform 0.25s ease-out` means changes to `transform` will be transitioned over 0.25 seconds
@@ -2165,9 +2157,8 @@ Reveals an interactive popout menu on hover.
 
 #### Giải thích
 
-1. `position: relative` on the reference parent establishes a Cartesian positioning context for its child.
-2. `position: absolute` takes the popout menu out of the flow of the document and positions it
-   in relation to the parent.
+1. thuộc tính `position: relative` để tạo khung tại phần tử này, giúp các phần tử giả có thể định vị được.
+2. thuộc tính  `position: absolute` tách phần tử con ra khỏi sự phụ thuộc vào phần tử cha và thiết lập mối quan hệ về vị trí đối với phần tử cha.
 3. `left: 100%` moves the the popout menu 100% of its parent's width from the left.
 4. `visibility: hidden` hides the popout menu initially and allows for transitions (unlike `display: none`).
 5. `.reference:hover > .popout-menu` means that when `.reference` is hovered over, select immediate
