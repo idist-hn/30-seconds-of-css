@@ -1,8 +1,8 @@
-### Bouncing loader
+### Hoạt ảnh bouncing khi tải trang
 
 `Creates a bouncing loader animation.`
 
-Tạo hiệu ứng nảy khi tải trang.
+Tạo hoạt ảnh nảy lên khi tải trang.
 #### HTML
 
 ```html
@@ -100,7 +100,7 @@ Ghi chú: `1rem` tương đương `16px`.
 
 4. Thuộc tính `margin: 3rem 0.2rem` để quy định mỗi hình tròn cách viền trên, dưới 1 khoảng `3rem` và cách viền trái/phải 1 khoảng `0.2rem` vì thế các hình tròn không bị chạm vào nhau, cách nhau 1 khoảng trống.
 
-5. Thuộc tính `animation` mà một thuộc tính được dùng để đại diện cho các thuộc tính khác như: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction`.
+5. Thuộc tính `animation` mà một thuộc tính được dùng để viết chung cho các thuộc tính khác như: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction`.
 
 6. Thuộc tính `nth-child(n)` nhắm tới các thành phần là con thứ n của thẻ cha chứa nó.
 
@@ -353,7 +353,7 @@ Một cách khác là sử dụng thuộc tính `justify-content: space-around` 
 <!-- tags: layout -->
 ### Flexbox centering
 
-Đặt các phần tử con ở giữa phần tử cha theo chiều dọc khi sử dụng thuộc tính `flexbox`.
+Đặt các phần tử con ở giữa trung tâm phần tử cha theo chiều dọc và ngang khi sử dụng thuộc tính `flexbox`.
 
 #### HTML
 
@@ -737,7 +737,7 @@ Tùy chỉnh mẫu thanh cuộn cho các tài liệu và các phần tử với 
 
 #### Giải thích
 
-1. thuộc tính `::-webkit-scrollbar` tập trung vào các thành phần của thanh cuộn.
+1. thuộc tính `::-webkit-scrollbar` tập trung vào toàn bộ thành phần của thanh cuộn.
 2. thuộc tính `::-webkit-scrollbar-track` tập trung vào phần track của thanh cuộn.
 3. thuộc tính `::-webkit-scrollbar-thumb` tập trung vào hình dạng thanh cuộn.
 
@@ -873,7 +873,7 @@ Tạo một bóng tương tự như thuộc tính `box-shadow` nhưng dựa trê
 
 #### Giải thích
 
-Phần này yêu cầu 1 tập định nghĩa các thuộc tính phức tạp để thể hiện đúng, tương tự như một phần tử ảo sẽ được đặt giứa chính nó trong khi nó vẫn hiện ra.
+Phần này yêu cầu 1 tập định nghĩa các thuộc tính phức tạp để thể hiện được, tương tự như một phần tử ảo sẽ được đặt giứa chính nó trong khi nó vẫn hiện ra.
 
 
 1. thuộc tính `position: relative` ở phần tử cha thiết lập được định nghĩa về  vị trí Cartersian cho các phần tử con.
@@ -934,7 +934,7 @@ Tạo hiệu ứng khắc lên nền ở vùng có chữ.
 
 #### Giải thích
 
-thuộc tính `text-shadow: 0 2px white` tạo ra 1 bóng trắng cách theo chiều ngang `0px` và `2px` theo chiều dọc tính từ vị trí ban đầu.
+thuộc tính `text-shadow: 0 2px white` tạo ra 1 bóng trắng nhô theo chiều ngang `0px` và `2px` theo chiều dọc tính từ vị trí ban đầu.
 
 Màu nền phải tối hơn màu bóng để hiệu ứng có thể hiện rõ
 Màu văn bản phải hơi hạt hơn để tạo hiệu ứng giống như là khắc vào nền.
@@ -1708,8 +1708,7 @@ serve as the loading indicator for the donut. Use `animation` to rotate the elem
 <!-- tags: animation -->
 ### Easing variables
 
-Variables that can be reused for `transition-timing-function` properties, more
-powerful than the built-in `ease`, `ease-in`, `ease-out` and `ease-in-out`.
+Các biến được sử dụng lại cho thuộc tính transition-timing-function, rõ ràng khi tích hợp sẵn với ease, ease-in, ease-out and ease-in-out.
 
 #### HTML
 
