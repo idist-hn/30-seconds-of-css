@@ -99,8 +99,9 @@ Chú ý: thông thường `1rem` bằng `16px`.
 4. `margin: 3rem 0.2rem` thiêt lập mỗi vòng tròn sẽ có giá trị margin top/margin bottom là `3rem` và margin left/ margin right có giá trị là `0.2rem`, do đó ta không càn phải thiết lập giá trị cho từng vòng tròn một
 
 
-4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin
-   of `0.2rem` so that they do not directly touch each other, giving them some breathing room.
+~~4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin
+    of `0.2rem` so that they do not directly touch each other, giving them some breathing room.~~
+   4. `margin: 3rem 0.2rem` giúp cho mỗi hình tròn riêng biệt cách nhau trên dưới `3rem` và trái phải `0.2rem` vì vậy nó không trực tiếp chạm vào nhau, cho các thành phần có khoảng cách giữa chúng.
 
 5. `animation` là một thuộc tính dạng rút gọn của các thuộc tính animation được sử dụng: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction`  
 
@@ -279,7 +280,7 @@ Vì một vòng tròn có cùng giá trị radius tại bất kỳ điểm nào,
 #### Browser support
 
 <span class="snippet__support-note">⚠️ 
-Đối với snippet này để hoạt động đúng như ta muốn cần đảm báo rằng không có bất kỳ childrent nào không được float trong thành phần bao ngoài và cũng không floats theo chiều thẳng đứng trước khi thành phần bao ngoại bị clearfix nhưng trogn cùng một định dạng (ví du: các cột bị float).</span>
+Đối với snippet này để hoạt động đúng như ta muốn cần đảm báo rằng không có bất kỳ children nào không được float trong thành phần bao ngoài và cũng không floats theo chiều thẳng đứng trước khi thành phần bao ngoại bị clearfix nhưng trogn cùng một định dạng (ví du: các cột bị float).</span>
 
 <!-- tags: layout -->
 
@@ -965,9 +966,9 @@ Tạo ra một hiệu ứng, mà text xuất hiện để được "khắc" ho�
 
 #### Explanation
 
-`text-shadow: 0 2px white` tạo ra bóng màu trắng với lệch `0px` theo chiều ngang và `2px` theo chiều dọc so với vị trí ban đầu
+`text-shadow: 0 2px white` tạo ra bóng màu trắng với độ lệch `0px` theo chiều ngang và `2px` theo chiều dọc so với vị trí ban đầu
 
-Nền phải tối hơn bóng tối để hiệu ứng có thể hiển thị.
+Nền phải tối hơn bóng để hiệu ứng có thể hiển thị rõ ràng.
 
 Màu text nên hơi nhạt dần để làm cho nó trông giống như nó được khắc / khắc ra nền
 
@@ -1022,11 +1023,11 @@ Các thành phần con được phân bổ đồng đều bên trong thành ph�
 
 #### Explanation
 
-1. `display: flex` khởi tạo flexbox.
+1. `display: flex` khởi tạo môi trường flexbox.
 
-2. `justify-content: space-between` phân bố đều các phần tử con theo chiều ngang. Phần tử đầu tiên được đặt ở cạnh trái, trong khi cài cuối cùng được đặt ở cạnh bên phải.
+2. `justify-content: space-between` phân bố đều các phần tử con theo chiều ngang. Phần tử đầu tiên được đặt ở cạnh trái, trong khi cái cuối cùng được đặt ở cạnh bên phải.
 
-Cách khác, sử dụng `justify-content: space-around` để phân bổ cac thành phần con chi đều khoảng cách 2 bên của chúng chứ không phải là khoảng cách giữa chúng.
+Cách khác, sử dụng `justify-content: space-around` để phân bổ cac thành phần con chi đều khoảng cách 2 bên của chúng chứ không chỉ là khoảng cách giữa chúng.
 
 #### Browser support
 
@@ -1134,7 +1135,8 @@ Tạo text có màu gradient.
 
 2. `webkit-text-fill-color: transparent` điền vào đoạn text có màu trong suốt.
 
-3. `webkit-background-clip: text` **clips the background with the text, filling the text with the gradient background as the color.**
+3. `webkit-background-clip: text` **clips the background with the text, filling the text with the gradient background as the color.** 
+giữ lại phần nền và chữ, đổ màu lên chữ với dải màu gradient.
 
 #### Browser support
 
@@ -2133,7 +2135,7 @@ span {
 
 #### Explanation
 
-1. `transition: opacity 0.2s` chỉ định rằng thay đổi độ mờ đục sẽ được chuyển đổi trong khoảng 0.2 giây.
+1. `transition: opacity 0.2s` chỉ định rằng độ mờ đục sẽ được chuyển đổi trong khoảng 0.2 giây.
 2. `.sibling-fade:hover span:not(:hover)` xác định rằng khi phần tử cha được hovered, chọn bất kỳ phần tử con mà không được hovered sẽ thay đổi độ mờ của chúng đến`0.5`.
 
 #### Browser support
