@@ -1,8 +1,18 @@
-### Bouncing loader
+---
+title: Bouncing loader
+type: snippet
+tags: [animation]
+cover: digital-nomad-12
+dateModified: 2021-10-11T18:44:51+03:00
+---
 
 Creates a bouncing loader animation.
 
-#### HTML
+- Use `@keyframes` to define a bouncing animation, using the `opacity` and `transform` properties. Use a single axis translation on `transform: translate3d()` to achieve better animation performance.
+- Create a parent container, `.bouncing-loader`, for the bouncing circles. Use `display: flex` and `justify-content: center` to position them in the center.
+- Give the three bouncing circle `<div>` elements the same `width` and `height` and `border-radius: 50%` to make them circular.
+- Apply the `bouncing-loader` animation to each of the three bouncing circles.
+- Use a different `animation-delay` for each circle and `animation-direction: alternate` to create the appropriate effect.
 
 ```html
 <div class="bouncing-loader">
@@ -12,104 +22,33 @@ Creates a bouncing loader animation.
 </div>
 ```
 
-#### CSS
-
 ```css
 @keyframes bouncing-loader {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
   to {
     opacity: 0.1;
-    transform: translateY(-1rem);
+    transform: translate3d(0, -16px, 0);
   }
 }
+
 .bouncing-loader {
   display: flex;
   justify-content: center;
 }
+
 .bouncing-loader > div {
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
   margin: 3rem 0.2rem;
   background: #8385aa;
   border-radius: 50%;
   animation: bouncing-loader 0.6s infinite alternate;
 }
+
 .bouncing-loader > div:nth-child(2) {
   animation-delay: 0.2s;
 }
+
 .bouncing-loader > div:nth-child(3) {
   animation-delay: 0.4s;
 }
 ```
-
-#### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__bouncing-loader">
-  	<div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-
-<style>
-@keyframes bouncing-loader {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0.1;
-    transform: translateY(-1rem);
-  }
-}
-.snippet-demo__bouncing-loader {
-  display: flex;
-  justify-content: center;
-}
-.snippet-demo__bouncing-loader > div {
-  width: 1rem;
-  height: 1rem;
-  margin: 3rem 0.2rem;
-  background: #8385aa;
-  border-radius: 50%;
-  animation: bouncing-loader 0.6s infinite alternate;
-}
-.snippet-demo__bouncing-loader > div:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.snippet-demo__bouncing-loader > div:nth-child(3) {
-  animation-delay: 0.4s;
-}
-</style>
-
-#### Explanation
-
-Note: `1rem` is usually `16px`.
-
-1. `@keyframes` defines an animation that has two states, where the element changes `opacity` and is translated up on the 2D plane using `transform: translateY()`.
-
-2. `.bouncing-loader` is the parent container of the bouncing circles and uses `display: flex`
-   and `justify-content: center` to position them in the center.
-
-3. `.bouncing-loader > div`, targets the three child `div`s of the parent to be styled. The `div`s are given a width and height of `1rem`, using `border-radius: 50%` to turn them from squares to circles.
-
-4. `margin: 3rem 0.2rem` specifies that each circle has a top/bottom margin of `3rem` and left/right margin
-   of `0.2rem` so that they do not directly touch each other, giving them some breathing room.
-
-5. `animation` is a shorthand property for the various animation properties: `animation-name`, `animation-duration`, `animation-iteration-count`, `animation-direction` are used.
-
-6. `nth-child(n)` targets the element which is the nth child of its parent.
-
-7. `animation-delay` is used on the second and third `div` respectively, so that each element does not start the animation at the same time.
-
-#### Browser support
-
-<span class="snippet__support-note">✅ No caveats.</span>
-
-* https://caniuse.com/#feat=css-animation
-
-<!-- tags: animation -->

@@ -1,14 +1,19 @@
-### Donut spinner
+---
+title: Donut spinner
+type: snippet
+tags: [animation]
+cover: digital-nomad-3
+dateModified: 2021-10-13T19:29:39+02:00
+---
 
 Creates a donut spinner that can be used to indicate the loading of content.
 
-#### HTML
+- Use a semi-transparent `border` for the whole element. Exclude one side that will serve as the loading indicator for the donut.
+- Define and use an appropriate animation, using `transform: rotate()` to rotate the element.
 
 ```html
 <div class="donut"></div>
 ```
-
-#### CSS
 
 ```css
 @keyframes donut-spin {
@@ -19,6 +24,7 @@ Creates a donut spinner that can be used to indicate the loading of content.
     transform: rotate(360deg);
   }
 }
+
 .donut {
   display: inline-block;
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -29,39 +35,3 @@ Creates a donut spinner that can be used to indicate the loading of content.
   animation: donut-spin 1.2s linear infinite;
 }
 ```
-
-#### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__donut-spinner"></div>
-</div>
-
-<style>
-@keyframes snippet-demo__donut-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg);}
-}
-.snippet-demo__donut-spinner {
-  display: inline-block;
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  border-left-color: #7983ff;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  animation: snippet-demo__donut-spin 1.2s linear infinite;
-}
-</style>
-
-#### Explanation
-
-Use a semi-transparent `border` for the whole element, except one side that will
-serve as the loading indicator for the donut. Use `animation` to rotate the element.
-
-#### Browser support
-
-<span class="snippet__support-note">⚠️ Requires prefixes for full support.</span>
-
-* https://caniuse.com/#feat=css-animation
-* https://caniuse.com/#feat=transforms2d
-
-<!-- tags: animation -->

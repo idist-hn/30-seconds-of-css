@@ -1,8 +1,16 @@
-### Grid centering
+---
+title: Grid centering
+type: snippet
+tags: [layout]
+cover: work-hard-computer
+dateModified: 2020-12-30T15:37:37+02:00
+---
 
 Horizontally and vertically centers a child element within a parent element using `grid`.
 
-#### HTML
+- Use `display: grid` to create a grid layout.
+- Use `justify-content: center` to center the child horizontally.
+- Use `align-items: center` to center the child vertically.
 
 ```html
 <div class="grid-centering">
@@ -10,43 +18,11 @@ Horizontally and vertically centers a child element within a parent element usin
 </div>
 ```
 
-#### CSS
-
 ```css
 .grid-centering {
   display: grid;
   justify-content: center;
   align-items: center;
+  height: 100px;
 }
 ```
-
-#### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__grid-centering">
-    <p class="snippet-demo__grid-centering__child">Centered content.</p>
-  </div>
-</div>
-
-<style>
-.snippet-demo__grid-centering {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
-</style>
-
-#### Explanation
-
-1. `display: grid` enables grid.
-2. `justify-content: center` centers the child horizontally.
-3. `align-items: center` centers the child vertically.
-
-#### Browser support
-
-<span class="snippet__support-note">✅ No caveats.</span>
-
-* https://caniuse.com/#feat=css-grid
-
-<!-- tags: layout -->

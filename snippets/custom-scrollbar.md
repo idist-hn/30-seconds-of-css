@@ -1,84 +1,46 @@
-### Custom scrollbar
+---
+title: Custom scrollbar
+type: snippet
+tags: [visual]
+cover: sea-view
+dateModified: 2021-05-16T13:09:15+03:00
+---
 
-Customizes the scrollbar style for the document and elements with scrollable overflow, on WebKit platforms.
+Customizes the scrollbar style for elements with scrollable overflow.
 
-#### HTML
+- Use `::-webkit-scrollbar` to style the scrollbar element.
+- Use `::-webkit-scrollbar-track` to style the scrollbar track (the background of the scrollbar).
+- Use `::-webkit-scrollbar-thumb` to style the scrollbar thumb (the draggable element).
+- **Note:** Scrollbar styling doesn't appear to be on any standards track. This technique only works on WebKit-based browsers.
 
 ```html
 <div class="custom-scrollbar">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?</p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
+    Iure id exercitationem nulla qui repellat laborum vitae, <br />
+    molestias tempora velit natus. Quas, assumenda nisi. <br />
+    Quisquam enim qui iure, consequatur velit sit?
+  </p>
 </div>
 ```
-
-#### CSS
 
 ```css
-/* Document scrollbar */
-::-webkit-scrollbar {
+.custom-scrollbar {
+  height: 70px;
+  overflow-y: scroll;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1E3F20;
+  border-radius: 12px;
 }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-
-/* Scrollable element */
-.some-element::webkit-scrollbar {
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4A7856;
+  border-radius: 12px;
 }
 ```
-
-#### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__custom-scrollbar">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id exercitationem nulla qui repellat laborum vitae, molestias tempora velit natus. Quas, assumenda nisi. Quisquam enim qui iure, consequatur velit sit?
-    </p>
-  </div>
-</div>
-
-<style>
-.snippet-demo__custom-scrollbar {
-  height: 100px;
-  overflow: auto;
-}
-
-.snippet-demo__custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-
-.snippet-demo__custom-scrollbar::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-}
-
-.snippet-demo__custom-scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-</style>
-
-#### Explanation
-
-1. `::-webkit-scrollbar` targets the whole scrollbar element.
-2. `::-webkit-scrollbar-track` targets only the scrollbar track.
-3. `::-webkit-scrollbar-thumb` targets the scrollbar thumb.
-
-There are many other pseudo-elements that you can use to style scrollbars. For more info, visit the [WebKit Blog](https://webkit.org/blog/363/styling-scrollbars/)
-
-#### Browser support
-
-<span class="snippet__support-note">⚠️ Scrollbar styling doesn't appear to be on any standards track.</span>
-
-* https://caniuse.com/#feat=css-scrollbar
-
-<!-- tags: visual -->

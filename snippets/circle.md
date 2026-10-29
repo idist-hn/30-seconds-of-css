@@ -1,50 +1,25 @@
-### Circle
+---
+title: Circle
+type: snippet
+tags: [visual]
+cover: oven-paddle
+dateModified: 2020-12-30T15:37:37+02:00
+---
 
-Creates a circle shape with pure CSS.
+Creates a circular shape with pure CSS.
 
-#### HTML
+- Use `border-radius: 50%` to curve the borders of the element to create a circle.
+- Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing values will create an ellipse.
 
 ```html
 <div class="circle"></div>
 ```
 
-#### CSS
-
 ```css
 .circle {
   border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  background: #333;
+  width: 32px;
+  height: 32px;
+  background: #9C27B0;
 }
 ```
-
-#### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__circle"></div>
-</div>
-
-<style>
-.snippet-demo__circle {
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  background: #333;
-}
-</style>
-
-#### Explanation
-
-`border-radius: 50%` curves the borders of an element to create a circle.
-
-Since a circle has the same radius at any given point, the `width` and `height` must be the same. Differing
-values will create an ellipse.
-
-#### Browser support
-
-<span class="snippet__support-note">✅ No caveats.</span>
-
-* https://caniuse.com/#feat=border-radius
-
-<!-- tags: visual -->

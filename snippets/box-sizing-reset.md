@@ -1,11 +1,23 @@
-### Box-sizing reset
+---
+title: Box-sizing reset
+type: snippet
+tags: [layout]
+cover: interior
+dateModified: 2020-12-30T15:37:37+02:00
+---
 
-Resets the box-model so that `width`s and `height`s are not affected by their `border`s or `padding`.
+Resets the box-model so that `width` and `height` are not affected by `border` or `padding`.
 
-#### CSS
+- Use `box-sizing: border-box` to include the width and height of `padding` and `border` when calculating the element's `width` and `height`.
+- Use `box-sizing: inherit` to pass down the `box-sizing` property from parent to child elements.
+
+```html
+<div class="box">border-box</div>
+<div class="box content-box">content-box</div>
+```
 
 ```css
-html {
+div {
   box-sizing: border-box;
 }
 
@@ -14,35 +26,20 @@ html {
 *::after {
   box-sizing: inherit;
 }
-```
 
-#### Demo
-
-<div class="snippet-demo">
-  <div class="snippet-demo__box-sizing-reset">Demo</div>
-</div>
-
-<style>
-.snippet-demo__box-sizing-reset {
-  box-sizing: border-box;
-  width: 200px;
-  padding: 1.5em;
-  color: #7983ff;
-  font-family: sans-serif;
-  background-color: white;
-  border: 5px solid;
+.box {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  padding: 8px;
+  margin: 8px;
+  background: #F24333;
+  color: white;
+  border: 1px solid #BA1B1D;
+  border-radius: 4px;
 }
-</style>
 
-#### Explanation
-
-1. `box-sizing: border-box` makes the addition of `padding` or `border`s not affect an element's `width` or `height`.
-2. `box-sizing: inherit` makes an element respect its parent's `box-sizing` rule.
-
-#### Browser support
-
-<span class="snippet__support-note">✅ No caveats.</span>
-
-* https://caniuse.com/#feat=css3-boxsizing
-
-<!-- tags: layout -->
+.content-box {
+  box-sizing: content-box;
+}
+```
